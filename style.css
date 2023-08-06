@@ -14,5 +14,72 @@
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 /* End of Common Style */
+
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-float {
+    width: 150vw;
+    height: 150vw;
+    position: absolute;
+    top: -135vw;
+    left: -25vw;
+    background-color: rgba(50, 231, 255, 0.8);
+    border-radius: 45%;
+    animation: rotate linear 20s infinite;
+    z-index: -10;
+}
+
+.bg-float::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 231, 255, 0.2);
+    position: absolute;
+    animation: rotate linear 20s infinite;
+    border-radius: 40%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.navbar {
+    padding: 2rem;
+    width: 70%;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-item {
+    transition: trasform .5s;
+}
+
+.navbar-item a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+.navbar-item:hover {
+    transform: scale(1.3);
+}
+/* End of Header */
